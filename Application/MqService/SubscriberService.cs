@@ -14,8 +14,6 @@ namespace Application.MqService
         private IConnection connection;
         private IModel channel;
 
-        private EventingBasicConsumer? consumer;
-
         private const string SubscriberQueueName = "pub_queue";
         private string rabbitMQConnectionString;
 
@@ -88,7 +86,7 @@ namespace Application.MqService
                 {
                     //ارسال پیام به کاربر
                     //برای راحتی و سریع نوشتن کد خارج از عملکرد برنامه فعلا کنسول لاگ شده
-                    //اما با استفاده از ابزارهایی مثل signalR میشود نوتیف برای کاربر ارسال کرد
+                    //اما با استفاده از ابزارهایی مثل signalR میشود نوتیف برای کلاینت ارسال کرد
                     Console.WriteLine($"{user.Username}: تسک تغییر وضعیت داده شده به {newStatus}");
                 }
             }
